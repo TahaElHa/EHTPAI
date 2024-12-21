@@ -11,10 +11,8 @@ choice = st.sidebar.selectbox('Select app type', ['----- Choose application ----
 
 if choice == 'Image Analysis':
   image_file = st.file_uploader('Upload an image', type = ['png', 'jpg'])
-
-
-# Use Read API to read text in image
-with open(image_file, mode="rb") as image_data:
+  # Use Read API to read text in image
+  with open(image_file, mode="rb") as image_data:
     read_op = cv_client.read_in_stream(image_data, raw=True)
 
     # Get the async operation ID so we can check for the results
@@ -35,4 +33,6 @@ with open(image_file, mode="rb") as image_data:
                 print(line.text)
                 # Uncomment the following line if you'd like to see the bounding box 
                 #print(line.bounding_box)
+
+
 
