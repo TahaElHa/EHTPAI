@@ -36,6 +36,3 @@ with open(image_file, mode="rb") as image_data:
                 # Uncomment the following line if you'd like to see the bounding box 
                 #print(line.bounding_box)
 
-python read-text.py
-python read-text.py
-
